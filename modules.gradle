@@ -1,0 +1,25 @@
+ext {
+    // 独立部署的启动项目
+    startupService = [
+            'home:home-pc-app',
+
+    ]
+
+    // 纯粹的entity，dto数据项目，不能包含mapper类或者service类等业务相关
+    baseAPIJar = [
+            'home:home-base',
+    ]
+
+    // 旧版移动端各模块入口，即包含了controller层的项目
+    oldMobileEndEntry = [
+    ]
+
+    // 其他项目，通常是各模块的service层、早期的移动端项目以及混合项目（比如base包含了mapper类）
+    otherModule = [
+            'home:home-service'
+    ]
+
+    // 特殊模块
+    specialModule = [
+    ]
+}

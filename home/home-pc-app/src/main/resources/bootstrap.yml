@@ -1,0 +1,22 @@
+
+spring:
+  application:
+    name: home-pc-app
+  cloud:
+    config:
+      label: master
+      profile: dev
+      discovery:
+        service-id: config-server
+        enabled: true
+        #这里拉取配置是自动按照模块名字.yml匹配的，所以不需要额外加上配置名字
+
+server:
+  port: 9001
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+  instance:
+    prefer-ip-address: true

@@ -1,0 +1,20 @@
+apply from: 'modules.gradle'
+rootProject.name = 'ims-backend'
+
+def moduleList = []
+
+moduleList.addAll(startupService)
+moduleList.addAll(baseAPIJar)
+moduleList.addAll(oldMobileEndEntry)
+moduleList.addAll(otherModule)
+moduleList.addAll(specialModule)
+//moduleList.addAll(hrStartupModule)
+//moduleList.addAll(hrBaseAPIJar)
+//moduleList.addAll(hrOtherModule)
+
+
+moduleList.each {
+    include it
+}
+
+

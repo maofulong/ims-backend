@@ -1,0 +1,19 @@
+spring:
+  jackson:
+    default-property-inclusion: non_null # jackson null节点忽略配置，@ResponseBody返回对象时，自动摒弃null值返回给前台
+    #    date-format: yyyy-MM-dd # Date类型数据，格式化
+    time-zone: GMT+8 # 时区
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 300000
+ribbon:
+  ConnectTimeout: 50000
+  ReadTimeout: 100000
+feign:
+  hystrix:
+    enabled: true
+
