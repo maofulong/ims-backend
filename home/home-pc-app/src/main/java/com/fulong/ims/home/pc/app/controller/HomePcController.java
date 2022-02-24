@@ -14,18 +14,18 @@ import javax.validation.Valid;
  * @author name
  */
 @Controller
-@RequestMapping("/api/home")
+@RequestMapping("/api/home/pc")
 public class HomePcController {
     @Resource
     private HomeService homeService;
 
-//    @Value("${dataSource.name}")
-//    private String dataSourceName;
+    @Value("${dataSource.name}")
+    private String dataSourceName;
 
     @ResponseBody
     @RequestMapping("/getHomeInitialParams")
     public HomeInitialParams getHomeInitialParams(){
-//        System.out.println("dataSourceName:"+dataSourceName);
+        System.out.println("dataSourceName:"+dataSourceName);
         return homeService.getHomeInitialParams();
     }
 
